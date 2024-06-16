@@ -100,6 +100,11 @@ highlight default link wikiLinkMdImg MoreMsg
 highlight default link wikiLinkRef Underlined
 highlight default link wikiLinkRefTarget Underlined
 highlight default link wikiLinkDate MoreMsg
+highlight default wikiBold cterm=bold gui=bold ctermfg=lightyellow guifg=lightyellow
+highlight default wikiItalic cterm=italic gui=italic ctermfg=lightyellow guifg=lightyellow
+highlight default wikiBoldItalic cterm=italic,bold gui=italic,bold ctermfg=lightyellow guifg=lightyellow
+highlight default link wikiItalicBold wikiBoldItalic
+
 
 unlet s:group s:type s:contained s:rx
 
@@ -280,11 +285,11 @@ syntax region wikiEq
 " {{{1 Miscellaneous
 
 execute 'syntax match wikiTodo /' . wiki#rx#todo . '/'
-syntax keyword wikiTodo TODO:
+syntax keyword wikiTodo TODO
 highlight default link wikiTodo Todo
 
 execute 'syntax match wikiDone /' . wiki#rx#done . '/'
-syntax keyword wikiDone DONE:
+syntax keyword wikiDone DONE
 highlight default link wikiDone Statement
 
 syntax region wikiQuote start=/^>\s\+/ end=/^$/
